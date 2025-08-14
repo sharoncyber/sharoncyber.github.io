@@ -17,11 +17,13 @@ header {
 }
 
 header h1 {
-    font-size: 10em;
+    font-size: 10vw; /* scales with viewport width */
     font-optical-sizing: auto;
     font-style: normal;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     margin: 0;
+    line-height: 1.1;
+    word-break: break-word; /* allows breaking long names on small screens */
 }
 
 .scroll-down {
@@ -69,8 +71,9 @@ h2 {
 }
 
 p {
-    margin: 1em 0 1em 0;
+    margin: 1em 0;
     text-align: center;
+    word-wrap: break-word; /* long text will wrap instead of overflowing */
 }
 
 .member {
@@ -79,6 +82,31 @@ p {
     gap: 0.5em; /* spacing between name and badge */
     margin-bottom: 0.5em;
     justify-content: center;
+    flex-wrap: wrap; /* allow badges to wrap under name on small screens */
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 15vw; /* shrink even more for tablets/phones */
+    }
+
+    main {
+        font-size: 1em; /* smaller font for mobile */
+        padding: 0 0.5rem;
+    }
+
+    .scroll-down {
+        font-size: 1.5rem; /* smaller arrow */
+        bottom: 2em; /* closer to heading on small screens */
+    }
+
+    .member img {
+        height: 35px; /* smaller badges on mobile */
+    }
+
+    .copyright {
+        font-size: 5vw;
+    }
 }
 
 footer {
@@ -87,4 +115,8 @@ footer {
     font-size: 2em;
     margin: 4rem 0 0 0;
     background: #121420;
+}
+
+.copyright {
+    margin: 0;
 }

@@ -3,6 +3,17 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 document.addEventListener("DOMContentLoaded", () => {
     const h1 = document.querySelector("h1");
 
+    const scrollDown = document.querySelector(".scroll-down");
+    const missionSection = document.getElementById("mission");
+
+    if (scrollDown && missionSection) {
+        scrollDown.addEventListener("click", () => {
+            missionSection.scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    }
+
     let iterations = 0;
     const interval = setInterval(() => {
         h1.innerText = h1.innerText

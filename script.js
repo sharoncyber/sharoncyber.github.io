@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const h1 = document.querySelector("h1");
 
     const scrollDown = document.querySelector(".scroll-down");
-    const missionSection = document.getElementById("mission");
 
-    if (scrollDown && missionSection) {
+    if (scrollDown) {
         scrollDown.addEventListener("click", () => {
-            missionSection.scrollIntoView({
+            window.scrollTo({
+                top: window.innerHeight, // absolute position
+                left: 0,
                 behavior: "smooth",
             });
         });
